@@ -1,0 +1,31 @@
+package com.designpatterns.matidesignpatterns.prototype2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+//single list with task
+public class TaskList {
+    final String name;
+    final List<Task> tasks = new ArrayList<>();
+
+    public TaskList(String name) {
+        this.name = name;
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        String s = "     List [" + name + "]";
+        for (Task task : tasks) {
+            s = s + "\n" + task.toString();
+        }
+        return s;
+    }
+}
